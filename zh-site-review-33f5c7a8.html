@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 日常查询与对照笔记</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f0f2f5;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e2a3a;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+    }
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    /* hero 卡片 */
+    .hero {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.06);
+      padding: 2.8rem 2.2rem 2.4rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e6e9f0;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 580;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      color: #0b1a2e;
+    }
+    .hero .lead {
+      font-size: 1.1rem;
+      color: #3b4a5e;
+      border-left: 4px solid #a0b8d0;
+      padding-left: 1.2rem;
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+    }
+    .hero .meta {
+      font-size: 0.9rem;
+      color: #6f7d8f;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .hero .meta span {
+      background: #eef1f6;
+      padding: 0.15rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+    }
+    /* 正文卡片 */
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.04);
+      padding: 1.8rem 2rem;
+      margin-bottom: 1.6rem;
+      border: 1px solid #e8ecf3;
+      transition: box-shadow 0.2s ease;
+    }
+    .card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      font-weight: 540;
+      margin-bottom: 0.6rem;
+      color: #1b2a41;
+      letter-spacing: -0.01em;
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 1.2rem 0 0.4rem;
+      color: #2b3f57;
+    }
+    .card p {
+      margin-bottom: 0.9rem;
+      color: #2c3e4f;
+    }
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+    .inset-quote {
+      background: #f7f9fc;
+      border-left: 5px solid #b8c9dd;
+      padding: 0.9rem 1.4rem;
+      margin: 1.2rem 0;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.98rem;
+      color: #2a4057;
+    }
+    .inset-quote strong {
+      color: #1f3a5c;
+    }
+    a {
+      color: #1f5c8a;
+      text-decoration: none;
+      border-bottom: 1px solid #cbdae9;
+      transition: border-color 0.15s;
+    }
+    a:hover {
+      border-bottom-color: #1f5c8a;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.7rem;
+      margin-top: 0.8rem;
+    }
+    .tag-list span {
+      background: #e9edf3;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      color: #2b4a62;
+      border: 1px solid #d7dfe9;
+    }
+    .faq-item {
+      border-bottom: 1px solid #e5e9f0;
+      padding: 0.8rem 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-weight: 540;
+      color: #1b3144;
+      margin-bottom: 0.25rem;
+    }
+    .faq-a {
+      color: #3e556b;
+      font-size: 0.95rem;
+    }
+    .visit-note {
+      text-align: center;
+      margin-top: 2.2rem;
+      padding: 1.6rem 1.2rem;
+      background: #ffffffd9;
+      backdrop-filter: blur(2px);
+      border-radius: 40px 40px 20px 20px;
+      border: 1px solid #e1e7ef;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .visit-note p {
+      font-size: 1rem;
+      color: #1a334b;
+    }
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body { padding: 1.2rem 0.8rem; }
+      .hero { padding: 1.8rem 1.2rem; }
+      .hero h1 { font-size: 1.7rem; }
+      .card { padding: 1.4rem 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- hero -->
+  <div class="hero">
+    <h1>爱游戏 · 日常对照笔记</h1>
+    <div class="lead">从查询一个游戏的名字，到翻阅一篇评测、一段历史——<a href="https://zh-site-aiyouxi.com.cn">爱游戏</a>提供的不只是目录，更是一种顺手翻阅的陪伴。</div>
+    <div class="meta">
+      <span>📋 查询 · 对照</span>
+      <span>📖 延伸阅读</span>
+      <span>🕊️ 轻量笔记</span>
+    </div>
+  </div>
+
+  <!-- 正文卡片1：从日常查询说起 -->
+  <div class="card">
+    <h2>从一次普通的查询开始</h2>
+    <p>周末想找一款老游戏，只记得角色穿着蓝色外套、背景有雪地。打开 <a href="https://zh-site-aiyouxi.com.cn">爱游戏</a>，先按年代过滤，再按标签缩小范围。前后不到五分钟，就找到了那个差点被遗忘的《雪岭迷踪》。</p>
+    <p>很多时候我们需要的不是长篇评测，而是一张清晰的对照表：发行年份、平台、开发商、系列关系。这些信息在爱游戏上被整理得平实而完整，没有多余的花哨装饰。</p>
+    <div class="inset-quote">
+      <strong>一个习惯</strong> —— 每当我记不清某款游戏的续作顺序，或者分不清重制版与原版的差异，就会去爱游戏里翻一翻。那里没有打分焦虑，只有干净的条目。
+    </div>
+  </div>
+
+  <!-- 正文卡片2：对照与延伸 -->
+  <div class="card">
+    <h2>对照，然后延伸</h2>
+    <p>同一款游戏在不同平台的表现往往参差不齐。爱游戏的条目里常会附上简短的版本备注，比如“PS4 版支持 60 帧”、“PC 版后续补丁修复了加载问题”。这些细节在选购或重温时很管用。</p>
+    <p>更让我喜欢的是“延伸阅读”部分——虽然每个条目不长，但常常会链接到相关的访谈、开发幕后，或者同系列作品。它不会把你困在一个页面里，而是自然引向下一段探索。</p>
+    <div class="tag-list">
+      <span>🔍 版本差异</span>
+      <span>📚 系列年表</span>
+      <span>🎙️ 开发者侧记</span>
+      <span>🧩 同类型推荐</span>
+    </div>
+  </div>
+
+  <!-- 正文卡片3：一些零碎但实用的场景 -->
+  <div class="card">
+    <h2>零碎场景里的小帮手</h2>
+    <p>和朋友争论某款游戏究竟是哪一年发售的，掏出爱游戏查一下，数据就摆在那里，不需要看视频广告。</p>
+    <p>写游戏相关的随笔时，想确认一下某位作曲家的作品列表，爱游戏的关联页面能快速给出清单。这种“查一下就有”的感觉，很像书架上那本翻旧了的百科全书。</p>
+    <p>偶尔也会在爱游戏里发现一些冷门作品——比如某款只在日本发行的策略游戏，条目里依然保留了完整的资料和封面小图。这种“不为主流而生”的完整性，让人觉得踏实。</p>
+  </div>
+
+  <!-- 正文卡片4：FAQ 摘要 -->
+  <div class="card">
+    <h2>常见问题 · 随手摘要</h2>
+    <div class="faq-item">
+      <div class="faq-q">❓ 爱游戏上的信息准确吗？</div>
+      <div class="faq-a">条目会参考公开资料与社区反馈，并定期更新。遇到错误可以通过页面反馈渠道提醒维护者。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">❓ 需要注册才能使用吗？</div>
+      <div class="faq-a">大部分查询功能无需注册。部分社区互动或收藏功能可以选择创建账号。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">❓ 条目包含哪些信息？</div>
+      <div class="faq-a">通常包括：游戏名称、发行时间、开发商/发行商、平台、类型、简单介绍、相关版本、外部链接。部分条目附有截图或宣传物料。</div>
+    </div>
+  </div>
+
+  <!-- 访问句 / 引导 -->
+  <div class="visit-note">
+    <p>如果你也喜欢在游戏资料里慢慢翻阅、对照、延伸，不妨把<a href="https://zh-site-aiyouxi.com.cn">爱游戏</a>存进书签。下次想到什么游戏，随时可以回来查一查。</p>
+  </div>
+</div>
+</body>
+</html>
