@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>关于米兰体育 · 一份站点说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f5f9fb;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1d2b32;
+      line-height: 1.7;
+      padding: 2rem 1.25rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* 网格卡片风格背景 */
+    .grid-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 1.8rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(26, 67, 73, 0.05), 0 1px 3px rgba(0, 40, 50, 0.03);
+      transition: box-shadow 0.2s;
+      border: 1px solid #dee9ed;
+    }
+
+    .grid-card:hover {
+      box-shadow: 0 8px 24px rgba(26, 94, 105, 0.08);
+    }
+
+    /* 蓝绿色点缀 */
+    .accent-underline {
+      display: inline-block;
+      border-bottom: 3px solid #3eb1a0;
+      padding-bottom: 4px;
+    }
+
+    .badge-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #3eb1a0;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+      color: #0f2d35;
+      line-height: 1.2;
+    }
+
+    h1 .teal {
+      color: #248277;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      color: #3b5b64;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #3eb1a0;
+      padding-left: 1rem;
+      background: #eef6f5;
+      border-radius: 0 12px 12px 0;
+      padding: 0.75rem 1.2rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin: 1.8rem 0 0.8rem;
+      color: #144c55;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h2::before {
+      content: "◆";
+      color: #3eb1a0;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin-bottom: 1.3rem;
+      color: #1f3c44;
+    }
+
+    .intro-highlight {
+      background: #e5f2ef;
+      padding: 1.2rem 1.6rem;
+      border-radius: 20px;
+      margin: 1.8rem 0;
+      border-left: 5px solid #3eb1a0;
+    }
+
+    .intro-highlight p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote-note {
+      background: #f3faf8;
+      padding: 1.4rem 1.8rem;
+      border-radius: 20px;
+      margin: 1.6rem 0;
+      font-style: normal;
+      border: 1px dashed #85c9bd;
+      position: relative;
+    }
+
+    .quote-note::before {
+      content: "📌 一点提示";
+      display: block;
+      font-weight: 500;
+      color: #1b7b6b;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+
+    .visit-sentence {
+      background: #ffffff;
+      padding: 1.6rem 1.8rem;
+      border-radius: 60px 24px 24px 60px;
+      margin: 2rem 0;
+      border: 1px solid #bcd9d2;
+      box-shadow: 0 2px 8px rgba(52, 131, 121, 0.06);
+      font-size: 1.05rem;
+    }
+
+    a {
+      color: #1a7f6f;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #b0d4cc;
+      transition: all 0.15s;
+    }
+
+    a:hover {
+      color: #0d554a;
+      border-bottom-color: #0d554a;
+    }
+
+    .inline-link-card {
+      display: inline;
+      background: #ecf6f3;
+      padding: 0.1rem 0.25rem;
+      border-radius: 6px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .feature-item {
+      background: #f4fbf9;
+      border-radius: 18px;
+      padding: 1rem 1.2rem;
+      border: 1px solid #d5e7e2;
+    }
+
+    .feature-item span {
+      font-weight: 500;
+      color: #1a6d60;
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: #2a525a;
+    }
+
+    .faq-mini {
+      margin: 2rem 0 0.5rem;
+      padding: 0;
+    }
+
+    .faq-mini details {
+      border-bottom: 1px solid #d3e2de;
+      padding: 0.8rem 0;
+    }
+
+    .faq-mini details:first-child {
+      border-top: 1px solid #d3e2de;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      color: #0f454f;
+      cursor: pointer;
+      padding: 0.2rem 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .faq-mini summary::before {
+      content: "▸";
+      color: #3eb1a0;
+      margin-right: 0.6rem;
+      transition: transform 0.2s;
+    }
+
+    .faq-mini details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .faq-mini details p {
+      margin: 0.6rem 0 0.2rem 1.4rem;
+      color: #2a5b61;
+      font-size: 0.95rem;
+    }
+
+    .footer-note {
+      margin-top: 1.8rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #cbdcd6;
+      font-size: 0.9rem;
+      color: #44666c;
+      text-align: left;
+    }
+
+    @media (max-width: 540px) {
+      body {
+        padding: 1.2rem 0.75rem;
+      }
+
+      .grid-card {
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .subhead {
+        font-size: 0.95rem;
+        padding: 0.6rem 1rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .visit-sentence {
+        border-radius: 20px;
+        padding: 1.2rem 1.2rem;
+      }
+
+      .intro-highlight {
+        padding: 1rem 1.2rem;
+      }
+    }
+
+    @media (min-width: 700px) {
+      .grid-card {
+        padding: 2.5rem 2.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <article class="grid-card">
+
+      <h1>关于 <span class="teal">米兰体育</span></h1>
+      <div class="subhead">
+        <span class="badge-dot"></span> 一份来自站内的说明与介绍 · 简洁叙述
+      </div>
+
+      <p>
+        在中文互联网的信息密度里，体育资讯与数据入口常常显得喧闹。而本站的初衷更倾向于安静地提供一种参照：如果你想了解意大利足球、欧洲体育动态以及相关赛事观察，<a href="https://in-milansport.com">米兰体育</a> 是一个值得驻足的站点。它并非综合门户，而更像一个围绕特定兴趣搭建的档案室与阅读空间。
+      </p>
+
+      <div class="intro-highlight">
+        <p><strong>站点基调：</strong> 内容以体育新闻、球队历史、战术分析及赛果汇总为主，不刻意追逐流量热点，也不渲染情绪。编辑思路偏向资料整理与背景补充，适合希望深入阅读而非仅仅浏览比分的用户。</p>
+      </div>
+
+      <p>
+        从结构上看，网站信息组织比较清晰：首页集中展示近期更新与专题，内页则按联赛、球队、赛季等维度划分。版式简洁，没有满屏弹窗或自动播放的广告，这一点在如今的内容环境中显得克制。我的个人感受是，它更适合用闲暇时间慢慢翻阅，而不是快速刷屏。
+      </p>
+
+      <h2>内容特点</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <span>📋 赛事档案</span>
+          <p>涵盖意甲、欧冠及部分欧洲二级联赛，每轮赛后提供简明复盘与数据摘要。</p>
+        </div>
+        <div class="feature-item">
+          <span>📖 背景阅读</span>
+          <p>关于俱乐部历史、青训体系、转会脉络的长文，非碎片化表达。</p>
+        </div>
+        <div class="feature-item">
+          <span>🔍 可信说明</span>
+          <p>信息来源均标注参考，不编造内幕，不引用匿名传闻，行文偏保守。</p>
+        </div>
+        <div class="feature-item">
+          <span>🧩 界面体验</span>
+          <p>浅色背景、低饱和度配色，没有浮动挂件，文章排版有呼吸感。</p>
+        </div>
+      </div>
+
+      <h2>适用场景</h2>
+      <p>如果你正在寻找一个不被算法推荐裹挟的体育阅读角落，或者想系统了解某支球队的赛季脉络，<a href="https://in-milansport.com">米兰体育</a> 可以提供相对沉静的参考。我个人觉得，它尤其适合这几类读者：喜欢读长文而非短讯的人；对意大利足球文化有好奇心；或者只是厌倦了满屏弹窗，想找一个干净页面看球赛回顾。</p>
+
+      <div class="quote-note">
+        <p>顺便说一句：站内没有用户注册、评论区或个性化推荐，所有内容都以静态页面呈现。这种克制意味着更新频率可能不如新闻流那么快，但每篇都有基本的编辑把关。对于追求信息准确而非速度的读者来说，这或许是一种优点。</p>
+      </div>
+
+      <div class="visit-sentence">
+        <p>📎 如果你想直接浏览站点，可以记住这个地址：<a href="https://in-milansport.com">米兰体育</a> —— 它更像一个安静的体育书架，而不是嘈杂的公告板。</p>
+      </div>
+
+      <h2>FAQ 摘要：关于本站的一些常见疑问</h2>
+      <div class="faq-mini">
+        <details>
+          <summary>米兰体育是官方媒体吗？</summary>
+          <p>不是官方机构，也不是俱乐部官网。它属于个人或小团队运营的兴趣站点，内容基于公开信息整理，不具有官方授权背景。</p>
+        </details>
+        <details>
+          <summary>信息更新频率如何？</summary>
+          <p>目前大约每周更新 3–5 篇，主要集中在周末赛后和转会窗口期间。没有固定的发布时间表，但尽量避免信息过时。</p>
+        </details>
+        <details>
+          <summary>网站有移动端适配吗？</summary>
+          <p>是的，页面针对手机和平板做了响应式调整，阅读体验流畅，不需要横屏缩放。</p>
+        </details>
+        <details>
+          <summary>是否接受投稿或合作？</summary>
+          <p>目前没有开放投稿入口，站内所有内容均由编辑自主完成。未来是否会调整，暂无明确计划。</p>
+        </details>
+      </div>
+
+      <div class="footer-note">
+        <p>✎ 本文仅作为站点介绍与可信说明，不构成任何投资或参与建议。如果你对体育内容有较高准确度要求，建议交叉对比多个信源。最后，再次感谢你的阅读与耐心。</p>
+      </div>
+
+    </article>
+  </div>
+</body>
+</html>
